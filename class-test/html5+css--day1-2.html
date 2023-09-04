@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="color">
+    <p>
+        <input type="date">
+    </p>
+    <p>
+        <input type="datetime">
+        <input type="datetime-local">
+    </p>
+    <form action="http://www.baidu.com" method="get">
+        <p>
+            <input type="email">
+        </p>
+        <p>
+            <input type="month">
+        </p>
+        <p>
+            <input type="number" min="1" max="12">
+        </p>
+        <p>
+            <input type="range" value="100">
+        </p>
+        <p>
+            <input type="time">
+        </p>
+        <p>
+            <input type="week">
+        </p>
+            <input type="submit" value="提交">
+    </form>
+    <p>
+        <datalist id="degree">
+            <option >大专</option>
+                <option >本科</option>
+                <option >研究生</option>
+                <option >其他</option>
+        </datalist>
+        <label>学历<input type="text" list="degree" value="本科"></label>
+        <label>学历
+            <select >
+                <option value="大专">大专</option>
+                <option value="本科">本科</option>
+                <option value="研究生">研究生</option>
+                <option value="其他">其他</option>
+            </select>
+        </label>
+    </p>
+</body>
+</html>
