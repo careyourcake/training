@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <p>home now user:<span id="current_user"></span>
+    </p>
+    <p>user list:<span id="user_list"></span></p>
+    <button onclick="logout()">Logout</button>
+    <script>
+        function logout(){
+            //localStorage.removeItem("account");
+            //localStorage.removeItem("password");
+            window.location.href = "login2.html";
+        }
+        window.onload =function(){
+            let val = sessionStorage.getItem("account");
+            let password = sessionStorage.getItem("password");
+            if(val){
+                let arr =JSON.parse(val)
+            let account = arr[arr.length-1]
+            document.querySelector('#current_user').innerText = account;
+            let lis = ''
+            for(const item of arr){
+                lis +=`<li>${item}</li>`
+            }
+            document.querySelector('#user_list').innerHTML = lis;
+           // document.querySelector('#user_list').innerText = arr;
+            }
+           
+        }
+    </script>
+</body>
+</html>

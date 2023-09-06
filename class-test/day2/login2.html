@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+     <p>
+         <label for="account">账号：</label>
+         <input type="text" name="account" id="account" autocomplete="off">
+    </p>
+     <p>
+        <label for="password">密码：</label>
+        <input type="password" name="password" id="password">
+    </p>
+    <p>
+        <input type="button" value="Login" onclick="handleLogin()">
+         <input type="reset" value="Reset">
+    </p>
+   
+    <script>
+        function handleLogin() {
+            let account = document.getElementById("account").value;
+            let password = document.getElementById("password").value;
+            if ((account == "guest" || account =='admin') && password == "123456") {
+                //sessionStorage.setItem("account", account);
+                //sessionStorage.setItem("password", password);
+                let val =sessionStorage.getItem('account')
+                if(val){
+                    let arr =JSON.parse(val)
+                    let index = arr.findIndex((v)=>{
+                        return v == account
+                    })
+                    if(index >=0){
+                        arr.splice(index,1)
+                    }
+                    arr.push(account)
+                    sessionStorage.setItem('account',JSON.stringify(arr))
+                }
+                else{
+                    sessionStorage.setItem('account',JSON.stringify([account]))
+                }
+                window.location ='home2.html'
+            } else {
+                alert("用户名或密码不正确，请检查");
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
