@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D-translate</title>
+</head>
+<style>
+    div{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border: solid 2px red;
+        border-radius: 10px;
+        transition: all 3s;
+    }
+    .r3dx:hover{
+        transform: rotateX(360deg);
+    }
+    .r3dy:hover{
+        transform: rotateY(360deg);
+       /* transform: translate(50px,10px);*/
+    }
+    .r3dz:hover{
+        transform: rotateZ(360deg);
+    }
+</style>
+<body>
+    <div class="r3dx">X轴旋转</div>
+    <div class="r3dy">Y轴旋转</div>
+    <div class="r3dz">Z轴旋转</div>
+</body>
+</html>
