@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <form action="home.html" method="get" onsubmit="return checkLogin()">
+        <p>
+            <label for="account">账号：</label>
+            <input type="text" name="account" id="account">
+            <button type="button" id="voiceAccountButton">语音输入</button>
+        </p>
+        <p>
+            <label for="password">密码：</label>
+            <input type="password" name="password" id="password">
+        </p>
+        <p>
+            <input type="submit" value="Login">
+            <input type="reset" value="Reset">
+        </p>
+    </form>
+    <script>
+        function checkLogin() {
+            let account = document.getElementById("account").value;
+            let password = document.getElementById("password").value;
+            if (account == "admin" && password == "123456") {
+                alert("登录成功");
+                localStorage.setItem("account", account);
+                localStorage.setItem("password", password);
+            } else {
+                alert("用户名或密码不正确，请检查");
+            }
+        }
+
+        // 语音输入账号
+        var voiceAccountButton = document.getElementById("voiceAccountButton");
+        voiceAccountButton.addEventListener("click", function () {
+            var recognition = new webkitSpeechRecognition(); // Chrome浏览器需使用webkitSpeechRecognition
+            recognition.lang = "en"; // 设置语音识别语言为英文，根据需要进行调整
+
+            recognition.start();
+
+            recognition.onresult = function (event) {
+                var transcript = event.results[0][0].transcript;
+                document.getElementById("account").value = transcript;
+            };
+
+            recognition.onerror = function (event) {
+                console.error("语音识别错误：" + event.error);
+            };
+        });
+
+        window.onload = function () {
+            let account = localStorage.getItem("account");
+            let password = localStorage.getItem("password");
+            if (account) {
+                document.querySelector('#account').value = account;
+                document.getElementById("password").value = password;
+            } else {
+
+            }
+        }
+    </script>
+</body>
+
+</html>

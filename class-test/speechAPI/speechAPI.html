@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>语音识别表单输入</title>
+</head>
+
+<body>
+
+    <h1>语音识别表单输入</h1>
+
+    <form>
+        <label for="speechInput">语音输入：</label>
+        <input type="text" id="speechInput" name="speechInput" placeholder="开始说话..." >
+        <button type="button" id="startButton">开始识别</button>
+    </form>
+    
+</body>
+<script>
+    // 获取表单元素和按钮
+    var speechInput = document.getElementById("speechInput");
+    var startButton = document.getElementById("startButton");
+
+    // 创建语音识别对象
+    var recognition = new webkitSpeechRecognition(); // Chrome浏览器需使用webkitSpeechRecognition
+
+    // 设置语音识别参数
+    recognition.continuous = true; // 连续识别模式
+    recognition.interimResults = true; // 返回中间结果
+
+    // 开始语音识别
+    startButton.addEventListener("click", function () {
+        recognition.start();
+    });
+
+    // 处理语音识别结果
+    recognition.onresult = function (event) {
+        var transcript = "";
+        for (var i = event.resultIndex; i < event.results.length; i++) {
+            if (event.results[i].isFinal) {
+                transcript += event.results[i][0].transcript;
+            }
+        }
+        speechInput.value = transcript;
+    };
+
+    // 处理语音识别错误
+    recognition.onerror = function (event) {
+        console.error("语音识别错误：" + event.error);
+    };
+</script>
+
+</html>
