@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function getItem(n) {
+  if (n === 1) {
+    return 2;
+  }
+  if (n === 2) {
+    return 3;
+  }
+
+  var prevPrevItem = 2; // 第一项
+  var prevItem = 3; // 第二项
+  var currentItem;
+
+  for (var i = 3; i <= n; i++) {
+    currentItem = prevPrevItem + prevItem;
+    prevPrevItem = prevItem;
+    prevItem = currentItem;
+  }
+
+  return currentItem;
+}
+
+var result = getItem(10);
+console.log("第10项的值为:", result);
+</script>
+</html>

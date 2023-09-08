@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function findMax(...numbers) {
+  const maxValue = Math.max(...numbers);//...numbers是一个数组,扩展运算符。。。来接收参数
+
+  if (maxValue > 100) {
+    throw new Error("输入的值超过最大值100");
+  }
+
+  return maxValue;
+}
+
+try {
+  const result = findMax(10, 5, 8, 101, 3);
+  console.log("最大值为:", result);
+} catch (error) {
+  console.error(error.message);
+}
+</script>
+</html>

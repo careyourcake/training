@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+    function f(x,step){
+        step = step || 1; 
+        return x+step;
+        } 
+        /*
+          函数 f 的作用是接受两个参数 x 和 step,并返回 x + step 的结果。如果参数 step 没有被传入或者传入的值为假值（例如 undefined、null、0、false 或空字符串），则会将 step 的值默认设置为 1,然后将 x 与 step 相加得到最终结果。
+        代码执行过程如下：
+        函数 f 被调用，并传入参数 x 和 step。
+        在函数体内,step = step || 1; 这行代码使用了逻辑或运算符 ||。如果 step 的值为真值（非假值），则 step 的值不会改变；如果 step 的值为假值，则会将 step 的值设为 1。
+        执行 return x + step; 语句，将 x 与 step 相加得到结果，并将结果作为函数的返回值。函数执行完毕，返回结果。举个例子，如果调用 f(5, 3)，则 x 的值为 5,step 的值为 3。由于 step 的值为真值（非假值），所以 step 的值不会改变。函数返回的结果为 5 + 3 = 8。*/
+</script>
+</html>
