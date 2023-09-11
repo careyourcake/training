@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a  id="link" href='www.baidu.com'>百度</a>
+</body>
+<script>
+    let link=document.querySelector('#link');
+    link.onclick = function(){
+        event.preventDefault();
+        alert('点击了超链接')
+    }
+</script>
+</html>

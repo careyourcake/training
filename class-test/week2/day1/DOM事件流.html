@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #my_div{
+        width: 200px;
+        height: 150px;
+        border: solid red 1px;
+    }
+</style>
+<body>
+    <div id="my_div">这是一个div</div>
+</body>
+<script >
+    var my_div =document.getElementById("my_div");
+    my_div.addEventListener('click',function(){
+        console.log("单击了div");
+    },true)
+    document.body.addEventListener('click',function(){
+        console.log("单击了body");
+    },true)
+    document.documentElement.addEventListener('click',function(){
+        console.log("单击了html");
+    },true)
+    document.addEventListener('click',function(){
+        console.log("单击了document");
+    },true)
+    window.addEventListener('click',function(){
+        console.log("单击了window");
+    },true)
+    //my_div.addEventListener('click',function(){
+    //    console.log("单击了div");
+    //},false)
+    document.body.addEventListener('click',function(){
+        console.log("单击了body");
+    },false)
+    document.documentElement.addEventListener('click',function(){
+        console.log("单击了html");
+    },false)
+    document.addEventListener('click',function(){
+        console.log("单击了document");
+    },false)
+    window.addEventListener('click',function(){
+        console.log("单击了window");
+    },false)
+</script>
+</html>
