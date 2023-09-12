@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <button id="btn">删除自己</button>
+    </div>
+</body>
+<script>
+    document.querySelector('#btn').onclick = function(event){
+        document.querySelector('#btn').onclick = null;
+        document.querySelector('#box').innerHTML = '按钮被删除掉了';
+    }
+/*
+    除了直接将事件处理程序设置为null，还有其他方法可以删除事件处理程序。以下是几种常用的方法：
+
+removeEventListener() 方法：
+使用removeEventListener()方法可以从元素中移除特定的事件处理程序。
+语法：element.removeEventListener(eventName, eventHandler[, useCapture])
+参数：
+eventName：要移除的事件名称，例如'click'。
+eventHandler：要移除的事件处理程序函数。
+useCapture（可选）：指定事件处理程序添加时的捕获阶段（true）或冒泡阶段（false）。与添加事件处理程序时的阶段参数保持一致。
+示例：
+
+function handleClick(event) {
+  // 处理点击事件的代码
+}
+
+element.removeEventListener('click', handleClick);
+
+使用匿名函数：
+可以将事件处理程序定义为匿名函数，并在需要删除事件处理程序时将其赋值为null。
+示例：
+
+var handleClick = function(event) {
+  // 处理点击事件的代码
+};
+
+element.onclick = handleClick;
+
+// 删除事件处理程序
+element.onclick = null;
+
+使用事件委托（Event Delegation）：
+通过将事件处理程序添加到父元素而不是每个子元素，可以更有效地管理事件处理程序，并在需要时删除整个事件委托。
+示例：
+
+function handleClick(event) {
+  if (event.target.matches('#btn')) {
+    // 处理按钮点击事件的代码
+  }
+}
+
+parentElement.addEventListener('click', handleClick);
+
+// 删除事件委托
+parentElement.removeEventListener('click', handleClick);
+    */
+</script>
+</html>
