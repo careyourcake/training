@@ -43,7 +43,7 @@
             recognition.lang = "en"; // 设置语音识别语言为英文
 
             recognition.start();
-
+        //语音处理，当event事件被触发
             recognition.onresult = function (event) {
                 var transcript = event.results[0][0].transcript;
                 document.getElementById("account").value = transcript;

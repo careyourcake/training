@@ -37,11 +37,12 @@
     recognition.onresult = function (event) {
         var transcript = "";
         for (var i = event.resultIndex; i < event.results.length; i++) {
+            //判断是否是最终的结果即识别是否结束
             if (event.results[i].isFinal) {
-                transcript += event.results[i][0].transcript;
+                transcript += event.results[i][0].transcript; //语音实际上是放在一个二维数组里，第一个元素是索引，第二个元素是候选项（置信度），0的置信度最高
             }
         }
-        speechInput.value = transcript;
+        speechInput.value = transcript; //赋值到id为speechInput的元素中
     };
 
     // 处理语音识别错误
