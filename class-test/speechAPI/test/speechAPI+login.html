@@ -40,7 +40,7 @@
         var voiceAccountButton = document.getElementById("voiceAccountButton");
         voiceAccountButton.addEventListener("click", function () {
             var recognition = new webkitSpeechRecognition(); // Chrome浏览器需使用webkitSpeechRecognition
-            recognition.lang = "en"; // 设置语音识别语言为英文，根据需要进行调整
+            recognition.lang = "en"; // 设置语音识别语言为英文
 
             recognition.start();
 

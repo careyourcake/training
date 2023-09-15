@@ -11,7 +11,7 @@
 
     <form>
         <label for="speechInput">语音输入：</label>
-        <input type="text" id="speechInput" name="speechInput" placeholder="开始说话..." >
+        <input type="text" id="speechInput" name="speechInput" placeholder="开始说话..." > 
         <button type="button" id="startButton">开始识别</button>
     </form>
     
@@ -25,10 +25,10 @@
     var recognition = new webkitSpeechRecognition(); // Chrome浏览器需使用webkitSpeechRecognition
 
     // 设置语音识别参数
-    recognition.continuous = true; // 连续识别模式
-    recognition.interimResults = true; // 返回中间结果
+    recognition.continuous = true; // 连续识别模式，设置为true后就不会识别一段对话后马上停止，而是会等待一段时间，实时对话中非常有用
+    recognition.interimResults = true; // 设为true后，即使没讲完，也会先显示部分内容
 
-    // 开始语音识别
+    // 开始语音识别， 用addEventListener向语音识别对象添加事件监听器
     startButton.addEventListener("click", function () {
         recognition.start();
     });
