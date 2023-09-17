@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>动画效果</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+</body>
+<script>
+ var box = document.getElementById('box');
+
+function animate(element, property, targetValue, duration, easing, callback) {
+  var startValue = parseFloat(getComputedStyle(element)[property]);
+  var startTime = null;
+
+  function animationStep(timestamp) {
+    if (!startTime) startTime = timestamp;
+    var elapsed = timestamp - startTime;
+    var progress = elapsed / duration;
+    if (progress > 1) progress = 1;
+
+    var currentValue = startValue + (targetValue - startValue) * easing(progress);
+    element.style[property] = currentValue + 'px';
+
+    if (progress < 1) {
+      requestAnimationFrame(animationStep);
+    } else {
+      if (typeof callback === 'function') {
+        callback();
+      }
+    }
+  }
+
+  requestAnimationFrame(animationStep);
+}
+
+// 定义缓动函数
+function easeInOutQuad(t) {
+  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+}
+
+// 执行动画
+animate(box, 'left', 300, 1000, easeInOutQuad, function() {
+  console.log('动画完成');
+});
+</script>
+</html>
