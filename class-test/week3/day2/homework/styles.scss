@@ -1,0 +1,20 @@
+// styles.scss
+//sass styles.scss styles.css
+@import "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css";
+
+// 自定义样式
+body {
+  background-color: red;
+}
+
+.navbar-nav {
+  background-color: blue;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.table {
+  background-color: yellow;
+}

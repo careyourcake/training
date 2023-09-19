@@ -1,0 +1,14 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css";
+body {
+  background-color: red; }
+
+.navbar-nav {
+  background-color: blue; }
+
+.card {
+  margin-bottom: 20px; }
+
+.table {
+  background-color: yellow; }
+
+/*# sourceMappingURL=styles.css.map */
