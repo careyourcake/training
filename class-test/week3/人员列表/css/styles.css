@@ -1,0 +1,42 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+}
+thead{
+    background-color: blue;
+    color:white
+}
+tbody{
+    background-color: wheat;
+    color:  blue;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: orangered;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 2px solid orangered;
+}
+td:not(:last-child) {
+    border-right: 2px solid orangered;
+}
+th:not(:last-child) {
+    border-right: 2px solid orangered;
+}

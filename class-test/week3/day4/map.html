@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    {
+        let obj ={}
+        obj.null =1
+        console.log(obj);
+        obj.undefined=undefined
+        console.log(obj);
+
+        obj[null] =2
+        console.log(obj);
+
+        obj[0]=0
+        obj['0']= '0'
+        console.log(obj);
+
+        let sym =Symbol()
+        obj[sym] =Math.random()
+        console.log(obj);
+
+        obj[true] =true
+        console.log();
+
+        let zhangsan = {name : 'zhangsan'};
+        obj[zhangsan] =zhangsan 
+        let zhangsan2 = {name : 'zhangsan2'};
+        obj[zhangsan2] =zhangsan2
+        console.log(obj)
+    }
+</script>
+</html>

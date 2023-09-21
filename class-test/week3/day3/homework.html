@@ -169,12 +169,13 @@
             const title = prompt("输入新的歌曲");
             if(title){
                 const newItem = {
-                    id: data.length + 1,
+                    id: Math.random(),
                     title: title,
                     checked: false,
                     collect: false
                 };
                 data.push(newItem);
+                console.log('data',data);
                 render();
             }
         }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>index</title>
+ <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h2>人员列表</h2>
+    <table id="personTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        </thead>
+        <tbody id="personList"></tbody>
+    </table>
+
+    <div class="button-container">
+        <label for="sort">排序:</label>
+        <select id="sort">
+            <option value="default">默认排序</option>
+            <option value="ageAsc">年龄（升序）</option>
+            <option value="ageDesc">年龄（降序）</option>
+        </select>
+        <label for="gender">按性别分类:</label>
+        <select id="gender">
+            <option value="all">默认</option>
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+    </div>
+</div>
+    <script src="js/styles.js"></script>
+  
+</body>
+</html>
