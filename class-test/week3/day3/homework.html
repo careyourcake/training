@@ -151,12 +151,14 @@
             });				
         }
 
-        function selectAllItems(){
-            data.forEach(item => {
-                item.checked = true;
-            });
-            render();
-        }
+        function selectAllItems() {
+    //every数组方法检查是否选中，选中了话allchecked为true
+    const allChecked = data.every(item => item.checked);
+    data.forEach(item => {
+        item.checked = !allChecked;
+    });
+    render();
+}
 
         function deleteSelectedItems(){
             data = data.filter(item => !item.checked);
@@ -164,7 +166,7 @@
         }
 
         function addItem(){
-            const title = prompt("Enter the title of the new item:");
+            const title = prompt("输入新的歌曲");
             if(title){
                 const newItem = {
                     id: data.length + 1,
@@ -177,10 +179,10 @@
             }
         }
 
-        // Initial rendering
+        // 得先初始化一下
         render();
 
-        // Event listeners for buttons
+        // 加事件
         document.getElementById('selectAll').addEventListener('click', selectAllItems);
         document.getElementById('deleteSelected').addEventListener('click', deleteSelectedItems);
         document.getElementById('addItem').addEventListener('click',addItem);

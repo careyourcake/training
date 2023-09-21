@@ -1,0 +1,26 @@
+$side :top;
+.box border-top{
+    border-#{$side}: 1px solid green;
+}
+$base-size:10;
+.container{
+    width: $base-size*10px;
+    height: $base-size*20px;
+}
+.box{
+    .child{
+        width: $base-size*5px;
+        height: $base-size*5px;
+        border: solid blue 1px;
+    }
+    .content{
+        color: purple;
+        font-size: 30px;
+    }
+    a{
+        text-decoration: none;
+        &:hover{
+            color:blue;
+        }
+    }
+}
